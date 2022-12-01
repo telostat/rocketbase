@@ -1,0 +1,5 @@
+^.vscode
+^LICENSE\.md$
+^nix
+^shell.nix$
+^tmp
