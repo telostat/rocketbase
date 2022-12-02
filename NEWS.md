@@ -2,9 +2,11 @@
 ## [Unreleased]
 
 
-<a name="0.0.0.9000"></a>
-## 0.0.0.9000 - 2022-12-02
+<a name="0.0.1"></a>
+## 0.0.1 - 2022-12-02
 ### Chore
+- **dev:** add release script
+- **dev:** integrate git-chglog
 - **dev:** add Language Server Protocol implementation for R
 
 ### Feat
@@ -13,5 +15,8 @@
 ### Refactor
 - **style:** format the code using lsp document format provider
 
+### Pull Requests
+- Merge pull request [#1](https://github.com/telostat/rocketbase/issues/1) from telostat/vst/initial-chores
 
-[Unreleased]: https://github.com/telostat/rocketbase/compare/0.0.0.9000...HEAD
+
+[Unreleased]: https://github.com/telostat/rocketbase/compare/0.0.1...HEAD
