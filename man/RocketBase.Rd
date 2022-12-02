@@ -88,7 +88,8 @@ client <- rocketbase::RocketBase$new(
 \if{html}{\out{<a id="method-RocketBase-info"></a>}}
 \if{latex}{\out{\hypertarget{method-RocketBase-info}{}}}
 \subsection{Method \code{info()}}{
-Prints rudimentary information about the remote PocketBase API instance.
+Prints rudimentary information about the remote
+PocketBase API instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RocketBase$info()}\if{html}{\out{</div>}}
 }

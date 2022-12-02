@@ -44,7 +44,8 @@ RocketBase <- R6::R6Class("RocketBase", ## nolint
             private$setup()
         },
 
-        #' @description Prints rudimentary information about the remote PocketBase API instance.
+        #' @description Prints rudimentary information about the remote
+        #' PocketBase API instance.
         info = function() {
             cat(sprintf("PocketBase Instance URL: %s\n", self$url))
         },
@@ -73,8 +74,8 @@ RocketBase <- R6::R6Class("RocketBase", ## nolint
             self$bare <- crul::HttpClient$new(
                 url = self$url,
                 headers = list(
-                    Authorization=sprintf("%s", private$token),
-                    "User-Agent"=private$useragent()
+                    Authorization = sprintf("%s", private$token),
+                    "User-Agent" = private$useragent()
                 )
             )
         },
@@ -84,16 +85,26 @@ RocketBase <- R6::R6Class("RocketBase", ## nolint
             ## Build the HTTP client:
             client <- crul::HttpClient$new(url = self$url)
 
-            ## Issue the authentication request and get a response:
-            response <- client$post("/api/admins/auth-with-password", body=list(identity=private$identity, password=private$password))
+            ## Define authentication endpoint path:
+            path <- "/api/admins/auth-with-password"
 
-            ## Check if response status is 200. If not, raise error as it implies that authentication has failed.
+            ## Define credentials payload:
+            credentials <- list(
+                identity = private$identity,
+                password = private$password
+            )
+
+            ## Issue the authentication request and get a response:
+            response <- client$post(path, body = credentials)
+
+            ## If response status is not 200, raise error as it implies
+            ## failed authentication:
             if (response$status_code != 200) {
                 stop("Authentication failed.")
             }
 
             ## Parse the content of the response:
-            content <- jsonlite::fromJSON(response$parse(encoding="UTF-8"))
+            content <- jsonlite::fromJSON(response$parse(encoding = "UTF-8"))
 
             ## Return the authentication token:
             content$token
@@ -101,7 +112,14 @@ RocketBase <- R6::R6Class("RocketBase", ## nolint
 
         ## Builds the user-agent string.
         useragent = function() {
-            sprintf( "rocketbase/%s (%s; on:%s)", utils::packageVersion("rocketbase"), Sys.info()["sysname"], Sys.info()["nodename"])
+            ## Get package version:
+            version <- utils::packageVersion("rocketbase")
+
+            ## Get operating system:
+            sysname <- Sys.info()["sysname"]
+
+            ## Build the "User-Agent" header value:
+            sprintf("rocketbase/%s (%s)", version, sysname)
         }
     )
 )
