@@ -1,6 +1,6 @@
 Package: rocketbase
 Title: Unofficial PocketBase API Client
-Version: 0.0.1
+Version: 0.0.1.9000
 Authors@R:
     person("Vehbi Sinan", "Tunalioglu", , "vst@vsthost.com", role = c("aut", "cre"))
 Description: This package is an unofficial API client to the opensource headless content management service PocketBase.
