@@ -1,3 +1,4 @@
+^.chglog
 ^.vscode
 ^LICENSE\.md$
 ^nix

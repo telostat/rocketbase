@@ -21,6 +21,7 @@ in
 pkgs.mkShell {
   buildInputs = [
     thisR
+    pkgs.git-chglog
     pkgs.pocketbase
   ];
 
