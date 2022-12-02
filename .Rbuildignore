@@ -1,5 +1,7 @@
+^.chglog
 ^.vscode
 ^LICENSE\.md$
 ^nix
+^release.sh
 ^shell.nix$
 ^tmp

@@ -106,6 +106,21 @@ my_data <- jsonlite::fromJSON(response$parse(encoding = "UTF-8"))
 print(my_data)
 ```
 
+## Releasing
+
+Make sure that your `main` branch is up to date:
+
+```sh
+git checkout main
+git pull
+```
+
+Then, run the release script with new version information:
+
+```sh
+./release.sh -n <X.Y.Z>
+```
+
 ## License
 
 This work is licensed under MIT license. See [LICENSE](./LICENSE.md).

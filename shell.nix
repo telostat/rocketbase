@@ -4,6 +4,7 @@ let
 
   devDependencies = [
     pkgs.rPackages.devtools
+    pkgs.rPackages.languageserver
     pkgs.rPackages.roxygen2
   ];
 
@@ -20,6 +21,7 @@ in
 pkgs.mkShell {
   buildInputs = [
     thisR
+    pkgs.git-chglog
     pkgs.pocketbase
   ];
 
