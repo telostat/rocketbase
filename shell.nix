@@ -4,6 +4,7 @@ let
 
   devDependencies = [
     pkgs.rPackages.devtools
+    pkgs.rPackages.languageserver
     pkgs.rPackages.roxygen2
   ];
 
