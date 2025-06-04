@@ -86,7 +86,7 @@ RocketBase <- R6::R6Class("RocketBase", ## nolint
             client <- crul::HttpClient$new(url = self$url)
 
             ## Define authentication endpoint path:
-            path <- "/api/admins/auth-with-password"
+            path <- "/api/collections/_superusers/auth-with-password"
 
             ## Define credentials payload:
             credentials <- list(
